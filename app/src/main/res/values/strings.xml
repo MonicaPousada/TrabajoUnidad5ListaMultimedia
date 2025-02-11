@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TrabajoUnidad5ListaMultimedia</string>
+    <string name="titulo">LISTA MULTIMEDIA</string>
+    <string name="btnVolver">VOLVER</string>
+    <string name="rvideo">REPRODUCTOR DE VIDEO</string>
+    <string name="rAudio">REPRODUCTOR DE AUDIO</string>
+    <string name="rWeb">VISUALIZAR WEB</string>
+</resources>
