@@ -10,7 +10,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -48,8 +47,8 @@ public class DialogWeb extends DialogFragment {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient());
-        //webView.loadUrl(ruta);
-        webView.loadUrl("https://www.google.com");
+        webView.loadUrl(ruta);
+        //webView.loadUrl("https://www.google.com");
 
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override

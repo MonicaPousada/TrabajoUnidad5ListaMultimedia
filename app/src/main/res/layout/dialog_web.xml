@@ -32,7 +32,7 @@
 
     <TextView
         android:id="@+id/tvDescripcionDialogWeb"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -43,7 +43,7 @@
 
     <WebView
         android:id="@+id/webView"
-        android:layout_width="375dp"
+        android:layout_width="match_parent"
         android:layout_height="525dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"

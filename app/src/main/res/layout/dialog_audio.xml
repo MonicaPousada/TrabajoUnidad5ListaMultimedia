@@ -7,10 +7,10 @@
 
     <TextView
         android:id="@+id/tvReproductorAudio"
-        android:layout_width="393dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="365dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:text="@string/rAudio"
         android:textColor="#FF80AB"
         android:textSize="34sp"
@@ -32,7 +32,7 @@
 
     <TextView
         android:id="@+id/tvDescripcionDialogAudio"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
