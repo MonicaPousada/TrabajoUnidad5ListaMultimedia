@@ -1,14 +1,17 @@
 package com.example.trabajounidad5listamultimedia;
 
 public class Multimedia {
+    //enumerado para los tipos de archivo
     public enum Tipo{VIDEO, AUDIO, WEB}
 
+    //argumentos del modelo
     private String titulo;
     private String url;
     private Tipo tipo;
     private String descripcion;
     private int imagen;
 
+    //constructor
     public Multimedia(String titulo, String url, Tipo tipo, String descripcion, int imagen) {
         this.titulo = titulo;
         this.url = url;
@@ -17,6 +20,7 @@ public class Multimedia {
         this.imagen = imagen;
     }
 
+    //getters y setters
     public String getTitulo() {
         return titulo;
     }
@@ -57,6 +61,7 @@ public class Multimedia {
         this.imagen = imagen;
     }
 
+    //toString del modelo
     @Override
     public String toString() {
         return "Multimedia{" +

@@ -15,10 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    //creación de las variables de la clase
     private ArrayList<Multimedia> multimediaList = new ArrayList<>();
     private MultimediaAdapter adapter;
     private RecyclerView recyclerView;
 
+    //onCreate de la actividad
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //creacion de los archivos multimedia y rellenado del Array
         Multimedia videoPlaya = new Multimedia("Video playa", "android.resource://"+getApplicationContext().getPackageName()+"/"+String.valueOf(R.raw.playa), VIDEO, "Video de una playa practicamente vacía y tranquila", R.drawable.playa);
         multimediaList.add(videoPlaya);
         Multimedia videoBosque = new Multimedia("Video bosque", "android.resource://"+getApplicationContext().getPackageName()+"/"+R.raw.bosque, VIDEO, "Video de un bosque vacío", R.drawable.bosque);
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         Multimedia webGoogleMaps = new Multimedia("Web Google Maps", "https://www.google.es/maps/?hl=es", WEB, "Página principal de la web GoogleMaps", R.drawable.googlemaps);
         multimediaList.add(webGoogleMaps);
 
+        //creación del adapter al que se le pasa la lista multimedia y asociación del adapter al recyclerView
         adapter = new MultimediaAdapter(multimediaList);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

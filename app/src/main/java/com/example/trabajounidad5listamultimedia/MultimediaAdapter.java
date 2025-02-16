@@ -18,12 +18,15 @@ import java.util.List;
 
 public class MultimediaAdapter extends RecyclerView.Adapter<MultimediaAdapter.MultimediaViewHolder> {
 
+    //constante de la clase
     private final List<Multimedia> listaMultimedia;
 
+    //constructor del adapter
     public MultimediaAdapter(List<Multimedia> listaMultimedia){
         this.listaMultimedia = listaMultimedia;
     }
 
+    //crear e inflar la vesta de los items y encapsularla en el viewHoldeer
     @NonNull
     @Override
     public MultimediaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -31,6 +34,7 @@ public class MultimediaAdapter extends RecyclerView.Adapter<MultimediaAdapter.Mu
         return new MultimediaViewHolder(view);
     }
 
+    //asignar los datos del modelo a la vista y manejar los eventos onClick
     @Override
     public void onBindViewHolder(@NonNull MultimediaViewHolder holder, int position) {
         Multimedia multimedia = listaMultimedia.get(position);
@@ -41,6 +45,7 @@ public class MultimediaAdapter extends RecyclerView.Adapter<MultimediaAdapter.Mu
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //si el elemento es un video creo un bundle con la información de un video y llamo al dialogFragment adecuado
                 if (multimedia.getTipo().equals(VIDEO)){
                     Bundle bundle = new Bundle();
                     bundle.putString("ruta", multimedia.getUrl());
@@ -50,6 +55,7 @@ public class MultimediaAdapter extends RecyclerView.Adapter<MultimediaAdapter.Mu
                     dialogVideo.setArguments(bundle);
                     dialogVideo.show(((AppCompatActivity) v.getContext()).getSupportFragmentManager(), "ReproductorVideo");
                 }
+                //si el elemento es un audio creo un bundle con la información de un audio y llamo al dialogFragment adecuado
                 else if (multimedia.getTipo().equals(AUDIO)){
                     Bundle bundle = new Bundle();
                     bundle.putString("ruta", multimedia.getUrl());
@@ -59,6 +65,7 @@ public class MultimediaAdapter extends RecyclerView.Adapter<MultimediaAdapter.Mu
                     dialogAudio.setArguments(bundle);
                     dialogAudio.show(((AppCompatActivity) v.getContext()).getSupportFragmentManager(), "ReproductorAudio");
                 }
+                //si el elemento es una web creo un bundle con la información de una web y llamo al dialogFragment adecuado
                 else {
                     Bundle bundle = new Bundle();
                     bundle.putString("ruta", multimedia.getUrl());
@@ -75,12 +82,13 @@ public class MultimediaAdapter extends RecyclerView.Adapter<MultimediaAdapter.Mu
 
     }
 
+    //devuelve el numero de elementos de la lista
     @Override
     public int getItemCount() {
         return listaMultimedia.size();
     }
 
-    // ViewHolder
+    // ViewHolder para almacenar las referencias a la vista
     public static class MultimediaViewHolder extends RecyclerView.ViewHolder {
 
         ImageView img;
